@@ -4,6 +4,11 @@
 
 ## Description
 
+* [BMSP](BMSP)
+BMSPのプラグインを管理したり共通処理を提供するベースプラグインです。
+* [EventBeforeAction](EventBeforeAction)
+戦闘アクション実行前にコモンイベントを起動します。
+
 ## Usage
 
 各プラグインのjsファイルをダウンロードしてMVプロジェクトフォルダのjs/pluginsディレクトリ内へ配置してください。
