@@ -8,6 +8,12 @@
 BMSPのプラグインを管理したり共通処理を提供するベースプラグインです。
 * [EventBeforeAction](EventBeforeAction)
 戦闘アクション実行前にコモンイベントを起動します。
+* [TraitPreset](TraitPreset)
+任意のデータの特徴をプリセットとして使用します。
+* [EffectPreset](EffectPreset)
+任意のデータの使用効果をプリセットとして使用します。
+* [EnemyActionPreset](EnemyActionPreset)
+任意の敵キャラの行動パターンをプリセットとして使用します。
 
 ## Usage
 
