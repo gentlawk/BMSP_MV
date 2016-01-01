@@ -29,5 +29,5 @@ MVのプラグイン管理から導入したいプラグインを選択し状態
 ## Author
 
 * [gentlawk](https://github.com/gentlawk)  
-** [BlueRedZone](http://blueredzone.com)  
-** [@gentlawk](https://twitter.com/gentlawk)
+ * [BlueRedZone](http://blueredzone.com)  
+ * [@gentlawk](https://twitter.com/gentlawk)
