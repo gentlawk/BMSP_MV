@@ -6,6 +6,8 @@
 
 * [BMSP](BMSP)
 BMSPのプラグインを管理したり共通処理を提供するベースプラグインです。
+* [ContentsUpdator](ContentsUpdator)
+ウインドウの指定領域をアニメーションで切り替える機能を提供します。
 * [EffectPreset](EffectPreset)
 任意のデータの使用効果をプリセットとして使用します。
 * [EnemyActionPreset](EnemyActionPreset)
@@ -14,6 +16,10 @@ BMSPのプラグインを管理したり共通処理を提供するベースプ�
 戦闘アクション実行前にコモンイベントを起動します。
 * [MapFog](MapFog)
 マップにフォグを表示します。
+* [SkillCostDisplayExtension](SkillCostDisplayExtension)
+スキルコストの表示を拡張します。
+* [StateDisplayExtension](StateDisplayExtension)
+ステートアイコンの表示を拡張します。
 * [TraitPreset](TraitPreset)
 任意のデータの特徴をプリセットとして使用します。
 
