@@ -12,7 +12,7 @@
  * Released under the MIT license
  * https://github.com/gentlawk/BMSP_MV/blob/master/LICENSE
  *
- * @version 1.00
+ * @version 1.01
  *
  * @param Label
  * @desc 行動パターン追加メモのラベルです。
@@ -39,7 +39,7 @@
     /*
      * プラグインバージョン
      */
-    PluginManager.setVersion('BMSP_EnemyActionPreset', 1.00);
+    PluginManager.setVersion('BMSP_EnemyActionPreset', 1.01);
 
     /*
      * EnemyActionPreset
@@ -97,6 +97,7 @@
      */
     var _Scene_Boot_start = Scene_Boot.prototype.start;
     Scene_Boot.prototype.start = function() {
+        BMSP.requirePlugin('BMSP', 1.00);
         BMSP.EnemyActionPreset.init();
         _Scene_Boot_start.call(this);
     };

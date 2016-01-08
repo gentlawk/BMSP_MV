@@ -12,7 +12,7 @@
  * Released under the MIT license
  * https://github.com/gentlawk/BMSP_MV/blob/master/LICENSE
  *
- * @version 1.00
+ * @version 1.01
  *
  * @param Label
  * @desc マップフォグメモのラベルです。
@@ -69,7 +69,16 @@
     /*
      * プラグインバージョン
      */
-    PluginManager.setVersion('BMSP_MapFog', 1.00);
+    PluginManager.setVersion('BMSP_MapFog', 1.01);
+
+    /*
+     * 必須プラグインチェック
+     */
+    var _Scene_Boot_start = Scene_Boot.prototype.start;
+    Scene_Boot.prototype.start = function () {
+        BMSP.requirePlugin('BMSP', 1.00);
+        _Scene_Boot_start.call(this);
+    };
 
     /*
      * プラグインコマンド

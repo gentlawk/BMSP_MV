@@ -12,7 +12,7 @@
  * Released under the MIT license
  * https://github.com/gentlawk/BMSP_MV/blob/master/LICENSE
  *
- * @version 1.00
+ * @version 1.01
  *
  * @param Label_Actor
  * @desc アクターの特徴追加メモのラベルです。
@@ -65,7 +65,7 @@
     /*
      * プラグインバージョン
      */
-    PluginManager.setVersion('BMSP_TraitPreset', 1.00);
+    PluginManager.setVersion('BMSP_TraitPreset', 1.01);
 
     /*
      * TraitPreset
@@ -143,6 +143,7 @@
      */
     var _Scene_Boot_start = Scene_Boot.prototype.start;
     Scene_Boot.prototype.start = function() {
+        BMSP.requirePlugin('BMSP', 1.00);
         BMSP.TraitPreset.init();
         _Scene_Boot_start.call(this);
     };

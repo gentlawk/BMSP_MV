@@ -12,7 +12,7 @@
  * Released under the MIT license
  * https://github.com/gentlawk/BMSP_MV/blob/master/LICENSE
  *
- * @version 1.00
+ * @version 1.01
  *
  * @help
  * プラグインコマンド:
@@ -87,7 +87,7 @@
     /*
      * プラグインバージョン
      */
-    PluginManager.setVersion('BMSP_EventBeforeAction', 1.00);
+    PluginManager.setVersion('BMSP_EventBeforeAction', 1.01);
 
     /*
      * プラグインコマンド
@@ -245,6 +245,7 @@
      */
     var _Scene_Boot_start = Scene_Boot.prototype.start;
     Scene_Boot.prototype.start = function() {
+        BMSP.requirePlugin('BMSP', 1.00);
         _Scene_Boot_start.call(this);
         BMSP.EventBeforeAction.init();
     };
