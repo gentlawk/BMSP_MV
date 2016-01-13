@@ -1,5 +1,5 @@
 //=============================================================================
-// BMSP.js
+// BMSP.js (BMSPベースプラグイン)
 //=============================================================================
 
 /*:
@@ -12,14 +12,14 @@
  * Released under the MIT license
  * https://github.com/gentlawk/BMSP_MV/blob/master/LICENSE
  *
- * @version 1.10
+ * @version 1.11
  *
  * @help
- * 追加位置:
- *   BMSPプラグインシリーズの一番上
- *
  * 使用方法:
  *   BMSPプラグインシリーズのベースとなるプラグインです。
+ *
+ * ●追加位置
+ *   全てのBMSPプラグインシリーズより上に配置してください。
  */
 
 function BMSP() {
@@ -69,7 +69,7 @@ BMSP.requirePlugin = function (name, version) {
 /*
  * プラグインバージョン
  */
-PluginManager.setVersion('BMSP', 1.10);
+PluginManager.setVersion('BMSP', 1.11);
 
 /*
  * オブジェクトのユニークID管理
