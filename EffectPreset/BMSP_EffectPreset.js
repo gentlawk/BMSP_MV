@@ -1,5 +1,5 @@
 //=============================================================================
-// BMSP_EffectPreset.js
+// BMSP_EffectPreset.js (使用効果プリセット)
 //=============================================================================
 
 /*:
@@ -12,7 +12,7 @@
  * Released under the MIT license
  * https://github.com/gentlawk/BMSP_MV/blob/master/LICENSE
  *
- * @version 1.01
+ * @version 1.02
  *
  * @param Label_Skill
  * @desc スキルの使用効果追加メモのラベルです。
@@ -26,14 +26,14 @@
  * スキル、アイテムのメモ:
  *   <スキル効果追加:%idlist%>    # スキルID%idlist%の持つ使用効果を追加します。
  *   <アイテム効果追加:%idlist%>  # アイテムID%idlist%の持つ使用効果を追加します。
- *     %idlist%: カンマ区切りのIDリスト
+ *     - %idlist% : カンマ区切りのIDリスト
  *   ※各種メモのラベルはパラメータで変更可能です。
  *
  * 使用方法:
  *   スキル、アイテムのメモにデータのIDを任意個並べた設定を記述すると、
  *   そのデータがもつ使用効果を持ったデータとなります。
  *
- * 使用例:
+ * ●使用例:
  *   アイテムID2と3の使用効果を追加
  *     <アイテム効果追加:2,3>
  *
@@ -45,7 +45,7 @@
     /*
      * プラグインバージョン
      */
-    PluginManager.setVersion('BMSP_EffectPreset', 1.01);
+    PluginManager.setVersion('BMSP_EffectPreset', 1.02);
 
     /*
      * EffectPreset
