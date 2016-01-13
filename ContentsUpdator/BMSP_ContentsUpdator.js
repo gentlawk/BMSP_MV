@@ -1,5 +1,5 @@
 //=============================================================================
-// BMSP_ContentsUpdator.js
+// BMSP_ContentsUpdator.js (表示領域更新)
 //=============================================================================
 
 /*:
@@ -12,7 +12,7 @@
  * Released under the MIT license
  * https://github.com/gentlawk/BMSP_MV/blob/master/LICENSE
  *
- * @version 1.00
+ * @version 1.01
  *
  * @help
  * 使用方法:
@@ -20,24 +20,24 @@
  *   このプラグインは開発者向けで単体では表示上の効果はありません。
  *   以下では基本的な使い方のみ説明しますので、詳細はコードおよびContentsUpdatorを利用したプラグインのコードをご覧下さい。
  * 
- *   ●構造
+ * ●構造
  *   ウインドウ内容の更新領域は以下の様な構造になっています。
- *     Window
- *      |- AreaManager
- *          |- Area
- *          |   |- Panel1
- *          |   |- Panel2
- *          |   |   :
- *          |   |- Paneln
- *          |- Area
- *          |   :
- *          |- Area
- *              |- Panel1
- *              |- Panel2
- *              |   :
- *              |- Paneln
+ *   @ Window
+ *   @  |- AreaManager
+ *   @  |- Area
+ *   @  |   |- Panel1
+ *   @  |   |- Panel2
+ *   @  |   |   :
+ *   @  |   |- Paneln
+ *   @  |- Area
+ *   @  |   :
+ *   @  |- Area
+ *   @      |- Panel1
+ *   @      |- Panel2
+ *   @      |   :
+ *   @      |- Paneln
  *
- *   ●AreaManager
+ * ●AreaManager
  *   更新領域を管理するSpriteです。AreaManagerは複数の更新領域を持つことが出来ます。
  *   ウインドウインスタンスwindowに対してwindow.areaManagerで参照できます。
  *     ・registerUpdateArea(name, x, y, width, height)
@@ -49,8 +49,8 @@
  *       UpdateAreaと名前空間を共有する点に注意して下さい。
  *     ・unregister(name)
  *       nameという名前の(Auto)UpdateAreaを削除します。
- *
- *   ●UpdateArea
+ **
+ * ●UpdateArea
  *   更新領域のSpriteです。UpdateAreaは順序付きのPanelを複数持つことが出来ます。
  *   UpdateAreaは現在の表示Panelと次(または前)のPanelへの進捗(proress)情報を保持します。
  *   この2つの情報を更新することで複数のPanelの表示をアニメーションさせながら切り替えることが出来ます。
@@ -72,8 +72,8 @@
  *       現在表示中のPanel番号をセットします。これを更新すると進捗も0にセットされます。
  *     ・lazyCommit()
  *       遅延更新モードの時、Panelの更新を表示に反映します。
- *
- *   ●AutoUpdateArea
+ **
+ * ●AutoUpdateArea
  *   自動更新領域のSpriteです。UpdateAreaに自動で表示内容を切り替えていく機能を加えたクラスです。
  *     ・playing = true
  *       activeと異なり、falseのとき次のパネルへの進行がとまります。進捗中のアニメーションは停止しません。
@@ -81,8 +81,8 @@
  *       パネル1枚ごとの待機フレームをセットします。
  *     ・setAnimationDuration(value)
  *       切り替えアニメーションにかけるフレーム数です。
- *
- *   ●Panel
+ **
+ * ●Panel
  *   更新領域の表示内容のSpriteです。Panel1枚につき表示内容1つを描画し、2枚以上のPanelを更新領域に登録することで表示内容を切り替えます。
  *     ・syncFontSettings()
  *       Windowの現在のフォント設定をPanelに反映します。
@@ -90,8 +90,8 @@
  *     ・syncDrawSettings()
  *       Windowの現在の描画設定をPanelに反映します。
  *       反映されるのはtextColor,paintOpacity,outlineWidthです。
- *
- *   ●アニメーションの定義
+ **
+ * ●アニメーションの定義
  *   アニメーションタイプはBMSP.ContentsUpdator.animationsオブジェクトのプロパティとして定義します。
  *   各アニメーションタイプは進捗が0%の時の現在のPanel単体の表示処理single関数、
  *   進捗が0～100%の時の現在のPanelと次のPanelの表示処理next関数、
@@ -103,11 +103,15 @@
  *     panel.setFrame(0, 0, area.width, area.height)
  *   各種表示処理では進捗に応じてPanelの表示状態・位置を設定してください。
  *     ・single(progress, nowPanel, area)
+ *       進捗0%の処理内容
  *     ・next(progress, nowPanel, nextPanel, area)
+ *       進捗0～100%の処理内容
  *     ・prev(progress, nowPanel, prevPanel, area)
+ *       進捗0～-100%の処理内容
+ **
  *   デフォルトではfade,slideUp,slideDown,slideRight,slideLeftの4つが定義されているので参考にしてください。
  *
- *   ●遅延更新
+ * ●遅延更新
  *   (Auto)UpdateAreaのプロパティlazyをtrueにすると、遅延更新モードになります。
  *   遅延更新モードではPanelの登録・削除処理を行ってもすぐに反映されなくなります。
  *   行った変更を表示に反映するにはlazyCommit()関数を呼び出します。
@@ -121,7 +125,7 @@
     /*
      * プラグインバージョン
      */
-    PluginManager.setVersion('BMSP_ContentsUpdator', 1.00);
+    PluginManager.setVersion('BMSP_ContentsUpdator', 1.01);
     
     /*
      * 必須プラグインチェック
