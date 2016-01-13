@@ -1,5 +1,5 @@
 //=============================================================================
-// BMSP_TraitPreset.js
+// BMSP_TraitPreset.js (特徴プリセット)
 //=============================================================================
 
 /*:
@@ -12,7 +12,7 @@
  * Released under the MIT license
  * https://github.com/gentlawk/BMSP_MV/blob/master/LICENSE
  *
- * @version 1.01
+ * @version 1.02
  *
  * @param Label_Actor
  * @desc アクターの特徴追加メモのラベルです。
@@ -46,14 +46,14 @@
  *   <防具特徴追加:%idlist%>       # 防具ID%idlist%の持つ特徴を追加します。
  *   <敵特徴追加:%idlist%>         # 敵キャラID%idlist%の持つ特徴を追加します。
  *   <ステート特徴追加:%idlist%>   # ステートID%idlist%の持つ特徴を追加します。
- *     %idlist%: カンマ区切りのIDリスト
+ *     - %idlist% : カンマ区切りのIDリスト
  *   ※各種メモのラベルはパラメータで変更可能です。
  *
  * 使用方法:
  *   アクター、職業、武器、防具、敵キャラ、ステートのメモにデータのIDを
  *   任意個並べた設定を記述すると、そのデータがもつ特徴を持ったデータとなります。
  *
- * 使用例:
+ * ●使用例:
  *   エネミーID2と3の特徴を追加
  *     <敵特徴追加:2,3>
  *
@@ -65,7 +65,7 @@
     /*
      * プラグインバージョン
      */
-    PluginManager.setVersion('BMSP_TraitPreset', 1.01);
+    PluginManager.setVersion('BMSP_TraitPreset', 1.02);
 
     /*
      * TraitPreset
