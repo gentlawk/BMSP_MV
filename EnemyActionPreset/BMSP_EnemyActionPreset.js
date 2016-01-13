@@ -1,5 +1,5 @@
 //=============================================================================
-// BMSP_EnemyActionPreset.js
+// BMSP_EnemyActionPreset.js (行動パターンプリセット)
 //=============================================================================
 
 /*:
@@ -12,7 +12,7 @@
  * Released under the MIT license
  * https://github.com/gentlawk/BMSP_MV/blob/master/LICENSE
  *
- * @version 1.01
+ * @version 1.02
  *
  * @param Label
  * @desc 行動パターン追加メモのラベルです。
@@ -21,13 +21,13 @@
  * @help
  * 敵キャラのメモ:
  *   <行動パターン追加:%idlist%>  # 敵キャラID%idlist%の持つ行動パターンを追加します。
- *     %idlist%: カンマ区切りのIDリスト
+ *     - %idlist% : カンマ区切りのIDリスト
  *   ※メモのラベルはパラメータで変更可能です。
  *
  * 使用方法:
  *   敵キャラのメモに設定を記述すると、その敵キャラがもつ行動パターンを持った敵キャラとなります。
  *
- * 使用例:
+ * ●使用例:
  *   エネミーID2と3の行動パターンを追加
  *     <行動パターン追加:2,3>
  *
@@ -39,7 +39,7 @@
     /*
      * プラグインバージョン
      */
-    PluginManager.setVersion('BMSP_EnemyActionPreset', 1.01);
+    PluginManager.setVersion('BMSP_EnemyActionPreset', 1.02);
 
     /*
      * EnemyActionPreset
