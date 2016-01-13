@@ -1,5 +1,5 @@
 //=============================================================================
-// BMSP_SkillCostDisplayExtension.js
+// BMSP_SkillCostDisplayExtension.js (スキルコスト表示拡張)
 //=============================================================================
 
 /*:
@@ -12,7 +12,7 @@
  * Released under the MIT license
  * https://github.com/gentlawk/BMSP_MV/blob/master/LICENSE
  *
- * @version 1.00
+ * @version 1.01
  *
  * @param AnimationType
  * @desc 切り替えアニメーションのタイプです。
@@ -28,18 +28,24 @@
  *
  * @help
  * 必須プラグイン:
- *   BMSP_ContentsUpdator
+ *   BMSP_ContentsUpdator ver1.00以上
  *
  * 使用方法:
  *   スキルのコストが複数ある場合、MP・TPそれぞれのコストを表示します。
  *   他プラグインによりHPコストがある(と思われる)場合はHPコストも表示されます。
  *
+ * ●アニメーションタイプ:
  *   切り替えアニメーションのタイプはデフォルトでは以下が使用可能です。
- *   slideUp   : 上方向にスライド
- *   slideDown : 下方向にスライド
- *   slideRight: 右方向にスライド
- *   slideLeft : 左方向にスライド
- *   fade      : クロスフェード
+ *   ・slideUp
+ *     上方向にスライド
+ *   ・slideDown
+ *     下方向にスライド
+ *   ・slideRight
+ *     右方向にスライド
+ *   ・slideLeft
+ *     左方向にスライド
+ *   ・fade
+ *     クロスフェード
  */
 
 
@@ -48,7 +54,7 @@
     /*
      * プラグインバージョン
      */
-    PluginManager.setVersion('BMSP_SkillCostDisplayExtension', 1.00);
+    PluginManager.setVersion('BMSP_SkillCostDisplayExtension', 1.01);
     
     /*
      * 必須プラグインチェック
