@@ -12,7 +12,7 @@
  * Released under the MIT license
  * https://github.com/gentlawk/BMSP_MV/blob/master/LICENSE
  *
- * @version 1.01
+ * @version 1.02
  *
  * @param AnimationType
  * @desc 切り替えアニメーションのタイプです。
@@ -57,7 +57,7 @@
     /*
      * プラグインバージョン
      */
-    PluginManager.setVersion('BMSP_StateDisplayExtension', 1.01);
+    PluginManager.setVersion('BMSP_StateDisplayExtension', 1.02);
     
     /*
      * 必須プラグインチェック
@@ -102,12 +102,13 @@
         var ph = Window_Base._iconHeight;
         var column = Math.floor(width / pw);
         if (column < 0 || BMSP.StateDisplayExtension._drawSingle) column = 1;
+        var panelHeader = 'stateIcons' + icons.join('-') + '_';
         for (var i = 0; i < icons.length; i++) {
-            var iconIndex = icons[i]
+            var iconIndex = icons[i];
             var sx = iconIndex % 16 * pw;
             var sy = Math.floor(iconIndex / 16) * ph;
             var panelIndex = Math.floor(i / column);
-            var panel = area.addPanel('stateIcon'+panelIndex);
+            var panel = area.addPanel(panelHeader+panelIndex);
             panel.bitmap.blt(bitmap, sx, sy, pw, ph, pw * (i % column), 0);
         }
     };
