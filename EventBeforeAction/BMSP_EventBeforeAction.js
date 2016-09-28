@@ -12,7 +12,7 @@
  * Released under the MIT license
  * https://github.com/gentlawk/BMSP_MV/blob/master/LICENSE
  *
- * @version 1.02
+ * @version 1.03
  *
  * @help
  * プラグインコマンド:
@@ -99,7 +99,7 @@
     /*
      * プラグインバージョン
      */
-    PluginManager.setVersion('BMSP_EventBeforeAction', 1.02);
+    PluginManager.setVersion('BMSP_EventBeforeAction', 1.03);
 
     /*
      * プラグインコマンド
@@ -147,6 +147,8 @@
         this.stackTargets = [];
         //使用前イベント実行フラグ
         this.flagExecutedEventBeforeUseSkill = {};
+        //通常コモンイベントの退避スタック
+        this.stackNormalCommonEvent = [];
     };
 
     BMSP.EventBeforeAction.init = function() {
@@ -502,12 +504,19 @@
     BattleManager.endEventBeforeForcedUseSkill = function() {
         //強制アクションバトラーの復帰:行動前イベント中のアクション防止
         this._actionForcedBattler = BMSP.EventBeforeAction.stackForcedBatterBeforeStartEvent.pop();
-        $gameTroop._interpreter = BMSP.EventBeforeAction.stackInpterpreter.pop();;
+        $gameTroop._interpreter = BMSP.EventBeforeAction.stackInpterpreter.pop();
         BMSP.EventBeforeAction.stackEventList.pop();
         this._phase = BMSP.EventBeforeAction.stackPhaseForcedUseSkill.pop();
     };
 
     BattleManager.startEventBeforeInvokeAction = function(action, subject, targets) {
+        //通常コモンイベントの退避
+        var reserved_event = $gameTemp.reservedCommonEvent()
+        var reserved_event_id = 0;
+        if (reserved_event) reserved_event_id = reserved_event.id;
+        BMSP.EventBeforeAction.stackNormalCommonEvent.push(reserved_event_id);
+        $gameTemp.clearCommonEvent();
+        
         this._phase = 'eventBeforeInvokeAction';
         event_ids = BMSP.EventBeforeAction.getBeforeInvokeActionEvents(action, subject, targets);
         BMSP.EventBeforeAction.stackEventList.push(event_ids);
@@ -525,6 +534,10 @@
     BattleManager.endEventBeforeInvokeAction = function() {
         BMSP.EventBeforeAction.stackEventList.pop();
         this._phase = 'action';
+        
+        //通常コモンイベントの復帰
+        var event_id = BMSP.EventBeforeAction.stackNormalCommonEvent.pop();
+        $gameTemp.reserveCommonEvent(event_id);
     };
 
     BattleManager.startEventBeforeForcedInvokeAction = function(action, subject, targets) {
@@ -546,7 +559,7 @@
     };
 
     BattleManager.endEventBeforeForcedInvokeAction = function() {
-        $gameTroop._interpreter = BMSP.EventBeforeAction.stackInpterpreter.pop();;
+        $gameTroop._interpreter = BMSP.EventBeforeAction.stackInpterpreter.pop();
         BMSP.EventBeforeAction.stackEventList.pop();
         this._phase = 'action';
     };
