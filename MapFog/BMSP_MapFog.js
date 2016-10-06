@@ -12,7 +12,7 @@
  * Released under the MIT license
  * https://github.com/gentlawk/BMSP_MV/blob/master/LICENSE
  *
- * @version 1.02
+ * @version 1.03
  *
  * @param Label
  * @desc マップフォグメモのラベルです。
@@ -47,6 +47,8 @@
  *   1つのマップに表示するフォグの数は任意ですが、フォグ番号は1から順番にふる必要があります。
  *   フォグの表示条件はマップ移動時のみ判定されます。
  *   同一マップ上でフォグの表示を切り替える場合はプラグインコマンドを使用して下さい。
+ *   マップフォグ画像は以下のディレクトリに配置してください(fogsディレクトリは新規作成してください)。
+ *   img/fogs
  *
  * ●使用例
  *   フォグを表示
@@ -69,7 +71,7 @@
     /*
      * プラグインバージョン
      */
-    PluginManager.setVersion('BMSP_MapFog', 1.02);
+    PluginManager.setVersion('BMSP_MapFog', 1.03);
 
     /*
      * 必須プラグインチェック
